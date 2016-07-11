@@ -6,7 +6,6 @@ import time
 import psycopg2
 import sys
 
-# http://developer.factual.com/working-with-categories/
 
 class FactualAPI:
 
@@ -45,8 +44,9 @@ class FactualAPI:
 
 	def query_restaurants_by_proximity(self, factual, category_ids, lat, long, radius_meters):
 		print("Querying restaurants for: lat, long, radius: %f, %f, %f" % (lat, long, radius_meters))
-		return self.factual.table(TABLE_ID).filters({'$and': [{'$or': [{'website': {'$blank': False}}, {'email': {'$blank': False}}]},
-													{'category_ids': {'$includes_any':category_ids}}]}).geo(circle(lat, long, radius_meters)).include_count(True)
+		return self.factual.table(TABLE_ID).filters({'$and': [{'$or': [{'website': {'$blank': False}},  
+			{'email': {'$blank': False}}]}, 
+			{'category_ids': {'$includes_any':category_ids}}]}).geo(circle(lat, long, radius_meters)).include_count(True)
 
 
 	def get_restaurants_by_proximity(self, factual, schema_field_names):
@@ -81,6 +81,7 @@ class FactualAPI:
 		print("\tTotal row count: %d" % total_row_count)
 		current_row_offset = 0
 		while current_row_offset < total_row_count:
+			# wait_before_request()
 			try:
 				data = restaurants.offset(current_row_offset).limit(50).data()
 			except Exception, e:
@@ -96,6 +97,7 @@ class FactualAPI:
 		print("Writing table rows!\n")
 		keys = schema_field_names
 		for item in data:
+			# Insert data into the table
 			try:
 				factual_restaurants_list = [json.dumps(item[key]) if item.get(key) else 'n/a' for key in keys]
 				unique_name = factual_restaurants_list[0]
@@ -121,26 +123,29 @@ class FactualAPI:
 				unique_admin_region = factual_restaurants_list[20]
 				unique_hours = factual_restaurants_list[21]
 				unique_hours_display = factual_restaurants_list[22]
-				cursor.execute("INSERT INTO factual_resturant_data (name, address, address_extended, po_box, locality, region, 		\
-					postcode, website, latitude, longitude, country, factual_id, tel, fax, email, category_ids, category_labels,	\
-					chain_id, chain_name, neighborhood, admin_region, hours, hours_display)  										\
-				VALUES                         																						\
-					(%s, %s, %s, %s,         											 											\
-					%s, %s, %s, %s, %s, %s, %s, %s,  																				\
-					%s, %s, %s, %s, %s, %s, %s,       																				\
-					%s, %s, %s, %s)                                      															\
-				ON  																												\
-				CONFLICT (factual_id)                        																		\
-				DO UPDATE SET  																										\
-				name = EXCLUDED.name;",																								\
-					(unique_name, unique_address, unique_address_extended, unique_po_box, unique_locality, unique_region, 
-					unique_postcode, unique_website, unique_latitude, unique_longitude, unique_country, unique_factual_id, 
-					unique_tel, unique_fax, unique_email, unique_category_ids, unique_category_labels, unique_chain_id, 
-					unique_chain_name, unique_neighborhood, unique_admin_region, unique_hours, unique_hours_display))                                                                                
+				cursor.execute("INSERT INTO factual_resturants (name, address, address_extended, po_box, 	\
+					locality, region, postcode, website, latitude, longitude, country, factual_id, tel,	\
+					fax, email, category_ids, category_labels, chain_id, chain_name, neighborhood, 		\
+					admin_region, hours, hours_display)  							\
+				VALUES                         									\
+					(%s, %s, %s, %s,         								\
+					%s, %s, %s, %s, %s, %s, %s, %s,  							\
+					%s, %s, %s, %s, %s, %s, %s,       							\
+					%s, %s, %s, %s)                                      					\
+				ON  												\
+				CONFLICT (factual_id)                        							\
+				DO UPDATE SET  											\
+				name = EXCLUDED.name;",										\
+					(unique_name, unique_address, unique_address_extended, unique_po_box, unique_locality, 
+					unique_region, unique_postcode, unique_website, unique_latitude, unique_longitude, 
+					unique_country, unique_factual_id, unique_tel, unique_fax, unique_email, 
+					unique_category_ids, unique_category_labels, unique_chain_id, unique_chain_name, 
+					unique_neighborhood, unique_admin_region, unique_hours, unique_hours_display))                                                                                
 				self.conn.commit()
 			except psycopg2.IntegrityError, e:
 				print 'Error %s' % e
 				sys.exit(1)
+
 
 
 # Oauthkey and secret key
