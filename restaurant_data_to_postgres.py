@@ -1,6 +1,5 @@
 import json
 from factual import Factual
-from itertools import islice
 from factual.utils import circle
 import time
 import psycopg2
