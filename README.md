@@ -14,13 +14,13 @@
 <h5><strong>Why is this interesting?</strong></h5>
 <ul>This provides a basic framework to obtain data and store it for further analysis!</ul>
 
-<h5><strong>Next Steps?</strong></h5>
+<h5><strong>My Next Steps?</strong></h5>
 <ul>I am re-factoring the code for the following:</ul>
 <ul>Command line access with Argparse and a code re-factor to allow access to all of factual's data categories.</ul>
 
-<ul><h5><strong>Dependencies</strong></h5></ul> 
+<h5><strong>Dependencies</strong></h5>
 <ul><h6>factual-api</h6></ul>
-<ul><h6>How to install factual-api</h6></ul> 
+<ul><h6>How to install factual-api</h6></ul>
 <ul><ul>pip install factual-api</ul></ul>
 <ul><h6>psycopg2</h6></ul> 
 <ul><h6>How to install psycopg2</h6></ul>
