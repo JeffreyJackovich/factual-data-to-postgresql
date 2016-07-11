@@ -10,9 +10,9 @@ import sys
 class FactualAPI:
 
 	def __init__(self, OAUTH_KEY, OAUTH_SECRET, factual):
-		self.OAUTH_KEY = OAUTH_KEY  
-		self.OAUTH_SECRET = OAUTH_SECRET
-		self.factual = Factual(OAUTH_KEY, OAUTH_SECRET)
+	    self.OAUTH_KEY = OAUTH_KEY  
+	    self.OAUTH_SECRET = OAUTH_SECRET
+	    self.factual = Factual(OAUTH_KEY, OAUTH_SECRET)
 
 
 	def start_request_rate_ctrl(self):
