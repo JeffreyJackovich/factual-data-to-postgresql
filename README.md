@@ -8,18 +8,17 @@
 <ul>Python scripts to create a postgresql table, pull restaurant data by location (latitude/longitude) coordinates from factual.com, and export the data to the created table.</ul>
 
 <h5><strong>How to operate?</strong></h5> 
-<ul>1. Create a postgresql table with: create_table.py </ul>
-<ul>2. Query restaurant data and export to the postgresql table with: restaurant_data_to_postgres.py </ul>
+<ul>1. Create a postgresql table with: <strong>create_table.py</strong> </ul>
+<ul>2. Query restaurant data and export to the postgresql table with: <strong>restaurant_data_to_postgres.py</strong> </ul>
 
 <h5><strong>Why is this interesting?</strong></h5>
 <ul>This provides a basic framework to obtain data and store it for further analysis!</ul>
 
 <h5><strong>Next Steps?</strong></h5>
 <ul>I am re-factoring the code for the following:</ul>
-<ul><ul>Command line access with Argparse.</ul></ul>
-<ul><ul>Allow command line access to all factual's data categories.</ul></ul>
+<ul>Command line access with Argparse and a code re-factor to allow access to all of factual's data categories.</ul>
 
-<ul><h5><strong>Dependencies</strong></h5> 
+<ul><h5><strong>Dependencies</strong></h5></ul> 
 <ul><h4>factual-api</h4></ul>
 <ul><h3>How to install factual-api</h3></ul> 
 <ul><ul>pip install factual-api</ul></ul>
