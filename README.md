@@ -8,7 +8,7 @@
 <ul>Python scripts to create a postgresql table, pull restaurant data by location (latitude/longitude) coordinates from factual.com, and export the data to the created table.</ul>
 
 <h2><strong>How to operate?</strong></h2> 
-<ul>1. Create a postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/create_table.py>"<strong>create_table.py</strong></a> </ul>
+<ul>1. Create a postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/create_table.py"><strong>create_table.py</strong></a> </ul>
 <ul>2. Query restaurant data and export to the postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/restaurant_data_to_postgresql.py"<strong>restaurant_data_to_postgres.py</strong></a> </ul>
 
 <h2><strong>Why is this interesting?</strong></h2>
