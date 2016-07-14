@@ -19,7 +19,7 @@
 <ul>Command line access with Argparse and a code re-factor to allow access to all of factual's data categories.</ul>
 
 <h2><strong>Dependencies</strong></h2>
-<ul><h2>1. factual-api</h2></ul>
+<ul><h3>1. factual-api</h3></ul>
 <ul><h3>How to install factual-api ?</h3></ul>
 <ul><ul>pip install factual-api</ul></ul>
 <ul><h3>2. psycopg2</h3></ul> 
