@@ -4,24 +4,24 @@
 
 
 
-<ul><h5><strong>What do these scripts accomplish?</strong></h5> 
+<ul><h2><strong>What do these scripts accomplish?</strong></h2> 
 <ul>Python scripts to create a postgresql table, pull restaurant data by location (latitude/longitude) coordinates from factual.com, and export the data to the created table.</ul>
 
-<h5><strong>How to operate?</strong></h5> 
+<h2><strong>How to operate?</strong></h2> 
 <ul>1. Create a postgresql table with: <strong>create_table.py</strong> </ul>
 <ul>2. Query restaurant data and export to the postgresql table with: <strong>restaurant_data_to_postgres.py</strong> </ul>
 
-<h5><strong>Why is this interesting?</strong></h5>
+<h2><strong>Why is this interesting?</strong></h2>
 <ul>This provides a basic framework to obtain data and store it for further analysis!</ul>
 
-<h5><strong>My Next Steps?</strong></h5>
+<h2><strong>My Next Steps?</strong></h2>
 <ul>I am re-factoring the code for the following:</ul>
 <ul>Command line access with Argparse and a code re-factor to allow access to all of factual's data categories.</ul>
 
-<h5><strong>Dependencies</strong></h5>
-<ul><h5>1. factual-api</h5></ul>
-<ul><h5>How to install factual-api ?</h5></ul>
+<h2><strong>Dependencies</strong></h2>
+<ul><h2>1. factual-api</h2></ul>
+<ul><h3>How to install factual-api ?</h3></ul>
 <ul><ul>pip install factual-api</ul></ul>
-<ul><h5>2. psycopg2</h5></ul> 
-<ul><h5>How to install psycopg2 ?</h5></ul>
+<ul><h3>2. psycopg2</h3></ul> 
+<ul><h3>How to install psycopg2 ?</h3></ul>
 <ul><ul>pip install psycopg2</ul></ul>
