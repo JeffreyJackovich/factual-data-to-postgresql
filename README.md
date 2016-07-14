@@ -9,7 +9,7 @@
 
 <h2><strong>How to operate?</strong></h2> 
 <ul>1. Create a postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/create_table.py"><strong>create_table.py</strong></a> </ul>
-<ul>2. Query restaurant data and export to the postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/restaurant_data_to_postgresql.py"><strong>restaurant_data_to_postgres.py</strong></a> </ul>
+<ul>2. Query restaurant data and export to the postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/restaurant_data_to_postgresql.py"><strong>restaurant_data_to_postgresql.py</strong></a> </ul>
 
 <h2><strong>Why is this interesting?</strong></h2>
 <ul>This provides a basic framework to obtain data and store it for further analysis!</ul>
