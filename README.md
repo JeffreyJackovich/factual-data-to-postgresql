@@ -5,7 +5,7 @@
 
 
 <ul><h2><strong>What do these scripts accomplish?</strong></h2> 
-<ul>Python scripts to create a postgresql table, pull restaurant data by location (latitude/longitude) coordinates from factual.com, and export the data to the created table.</ul>
+<ul>Python scripts to create a postgresql table, pull restaurant data by location (latitude/longitude) coordinates from <a href="http://developer.factual.com/">developer.factual.com</a>, and export the data to the created table.</ul>
 
 <h2><strong>How to operate?</strong></h2> 
 <ul>1. Create a postgresql table with: <a href="https://github.com/JeffreyJackovich/factual_data_to_postgresql/blob/master/create_table.py"><strong>create_table.py</strong></a> </ul>
