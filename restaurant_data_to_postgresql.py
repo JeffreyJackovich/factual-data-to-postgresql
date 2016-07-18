@@ -174,9 +174,11 @@ name = "<insert name>"
 pw = "<insert password>"
 
 # Method Calls
-conn,cursor = factual_api_class_object.connect_to_postgres(hostname,db,name,pw)
+conn,cursor = factual_api_class_object.connect_to_postgres(hostname, db, name, pw)
+
 schema_field_names = factual_api_class_object.get_schema_field_names(factual, TABLE_ID)
-factual_api_class_object.get_restaurants_by_proximity(factual,schema_field_names)
+
+factual_api_class_object.get_restaurants_by_proximity(factual, schema_field_names)
 
 
 
