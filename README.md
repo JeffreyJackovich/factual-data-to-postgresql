@@ -25,5 +25,4 @@
 <ul><ul>pip install psycopg2</ul></ul>
 
 <h2><strong>My Next Steps?</strong></h2>
-<ul>I am re-factoring the code for the following:</ul>
 <ul>Command line access with Argparse and a code re-factor to allow access to all of factual's data categories.</ul>
